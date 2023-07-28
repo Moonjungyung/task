@@ -22,24 +22,30 @@
             margin-bottom: 50px;
             color: #fff;
         }
-        main .weight h1 #height {
-        width: 500px;
-        height: 32px;
-        font-size: 15px;
-        border: 0;
-        border-radius: 15px;
-        outline: none;
-        }
-        main .weight h1 #result {
+        main .weight h1  {
 
         }
+        main .weight #w_frm {}
+        main .weight #w_frm fieldset {}
+        main .weight #w_frm fieldset input {
+            width: 50px;
+        }
+        main .weight #w_frm fieldset input::placeholder {
+            font-family: sans-serif; color: #fff;
+        }
+        main .weight h1 #result {}
     </style>
 </head>
 <body>
     <main>
         <div class="weight">
             <h1>당신은 <br> 적정체중일까요?</h1>
-            <input type="text" name="weight" id="height" placeholder="신장 작성하기!">
+            <form action="#" method="get" id="w_frm">
+                <fieldset>
+                    <legend class="skip">입력 양식</legend>
+                    <input type="text" name="weight" placeholder="신장 작성하기!">
+                </fieldset>
+            </form>
             <button type="button" id="result">클릭해서 알아보기</button>
         </div>
         <script></script>
