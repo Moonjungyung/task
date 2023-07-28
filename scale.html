@@ -21,19 +21,33 @@
             font-size: 50px;
             margin-bottom: 50px;
             color: #fff;
+            font-family: 'Black Han Sans', sans-serif;
         }
         main .weight h1  {
 
         }
         main .weight #w_frm {}
-        main .weight #w_frm fieldset {}
+        main .weight #w_frm fieldset {
+            display: flex; flex-flow: row nowrap;
+            justify-content: space-between;
+            padding: 0 40px;
+        }
         main .weight #w_frm fieldset input {
-            width: 50px;
+            padding: 10px;
+            width: 150px; height: 30px;
+            border-radius: 10px;
+            margin-bottom: 20px;
         }
         main .weight #w_frm fieldset input::placeholder {
-            font-family: sans-serif; color: #fff;
+            color: #aaa;
+            text-align: center;
         }
-        main .weight h1 #result {}
+        main .weight #result {
+            width: calc(100% - 50px); height: 50px;
+            border-radius: 10px;
+            color: #aaa;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
@@ -43,12 +57,24 @@
             <form action="#" method="get" id="w_frm">
                 <fieldset>
                     <legend class="skip">입력 양식</legend>
-                    <input type="text" name="weight" placeholder="신장 작성하기!">
+                    <input type="text" name="height" id="userHeight" placeholder="신장 : cm" autofocus>
+                    <input type="text" name="weight" id="userWeight" placeholder="몸무게 : kg">
                 </fieldset>
+                <!-- 무조건 초과 메세지 기준 -->
             </form>
             <button type="button" id="result">클릭해서 알아보기</button>
         </div>
-        <script></script>
+        <script>
+            const userHeight = document.querySelector('#userHeight')
+            const userWeight = document.querySelector('#userWeight')
+            const result = document.querySelector('#result')
+            console.log(userHeight, userWeight, result)
+            result.addEventListener('click',function(){
+                normal_w = `(${userHeight}-100)*0.9`
+                over = `${userWeight}-${normal_w}`
+                window.alert`('적정체중은 ${normal_w}kg이며 ${over}kg 초과되셨습니다.')`
+            })
+        </script>
     </main>
     </body>
 </html>
