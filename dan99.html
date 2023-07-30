@@ -6,24 +6,148 @@
     <meta name="description" content="">
     <meta name="keywords" content="">
     <title>자바스크립트 기초</title>
-    <style></style>
+    <link rel="stylesheet" href="./styles/dan_style.css">
+    <style>
+        .m_t {
+            width: 400px;
+            margin: 100px auto;
+            text-align: center;
+            border: 2px solid #000;
+            border-radius: 20px;
+        }
+        .m_t h1 {
+            padding: 50px 0;
+            font-weight: 700;
+            font-size: 2rem;
+            border: 2px solid #000;
+            border-top: 0;
+            border-left: 0;
+            border-right: 0;
+        }
+        .m_t .number {
+            display: flex; flex-flow: column nowrap;
+            align-items: center;
+        }
+        .m_t .number .set {
+            display: flex; flex-flow: row nowarp;
+            justify-content: center;
+            align-items: center;
+            margin: 10px;
+        }
+        .m_t .number .set:first-child {
+            margin-top: 30px;
+        }
+        .m_t .number .set:last-child {
+            margin-bottom: 30px;
+        }
+        .m_t .number .set p {
+            font-weight: 500;
+            font-size: 1.3rem;
+            margin-right: 10px;
+        }
+        .m_t .number .set input {
+            border-radius: 10px;
+            height: 30px;
+            background-color: #eee;
+            padding: 0 10px;
+        }
+        .b_frm {
+            display: flex; flex-flow: row nowrap;
+            padding: 0 20px;
+        }
+        .m_t button {
+            width: calc(100% - 60px); height: 40px;
+            border-radius: 50px;
+            font-weight: 500;
+            margin-bottom: 20px;
+            margin-right: 10px;
+        }
+        .m_t button:last-child {
+            margin-right: 0;
+        }
+    </style>
 </head>
 <body>
     <div class="m_t">
         <h1>구구단을 외우자</h1>
-        <ul class="number">
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-        </ul>
-        <button type="button">2단 구구단 정답 확인하기</button>
+        <div class="number">
+            <div class="set">
+                <p>2x1=?</p>
+                <input type="text" id="first" placeholder="답을 입력하세요" autofocus>
+            </div>
+            <div class="set">
+                <p>2x2=?</p>
+                <input type="text" id="second" placeholder="답을 입력하세요">
+            </div>
+            <div class="set">
+                <p>2x3=?</p>
+                <input type="text" id="third" placeholder="답을 입력하세요">
+            </div>
+            <div class="set">
+                <p>2x4=?</p>
+                <input type="text" id="fourth" placeholder="답을 입력하세요">
+            </div>
+            <div class="set">
+                <p>2x5=?</p>
+                <input type="text" id="fifth" placeholder="답을 입력하세요">
+            </div>
+            <div class="set">
+                <p>2x6=?</p>
+                <input type="text" id="sixth" placeholder="답을 입력하세요">
+            </div>
+            <div class="set">
+                <p>2x7=?</p>
+                <input type="text" id="seventh" placeholder="답을 입력하세요">
+            </div>
+            <div class="set">
+                <p>2x8=?</p>
+                <input type="text" id="eighth" placeholder="답을 입력하세요">
+            </div>
+            <div class="set">
+                <p>2x9=?</p>
+                <input type="text" id="ninth" placeholder="답을 입력하세요">
+            </div>
+        </div>
+        <div class="b_frm">
+            <button type="button" id="answer">정답 확인하기</button>
+            <button type="button" id="repeat">다시 공부하기</button>
+        </div>
     </div>
-    <script></script>
+    <script>
+        let a = 2
+        const btn1 = document.querySelector('#answer')
+        const btn2 = document.querySelector('#repeat')
+        const result1 = document.querySelector('.set #first')
+        const result2 = document.querySelector('.set #second')
+        const result3 = document.querySelector('.set #third')
+        const result4 = document.querySelector('.set #fourth')
+        const result5 = document.querySelector('.set #fifth')
+        const result6 = document.querySelector('.set #sixth')
+        const result7 = document.querySelector('.set #seventh')
+        const result8 = document.querySelector('.set #eighth')
+        const result9 = document.querySelector('.set #ninth')
+        btn1.addEventListener('click',function(){
+            result1.value =`${a*1}`
+            result2.value =`${a*2}`
+            result3.value =`${a*3}`
+            result4.value =`${a*4}`
+            result5.value =`${a*5}`
+            result6.value =`${a*6}`
+            result7.value =`${a*7}`
+            result8.value =`${a*8}`
+            result9.value =`${a*9}`
+        })
+        btn2.addEventListener('click',function(){
+            result1.value =''
+            result2.value =''
+            result3.value =''
+            result4.value =''
+            result5.value =''
+            result6.value =''
+            result7.value =''
+            result8.value =''
+            result9.value =''
+        })
+    </script>
 </body>
 </html>
